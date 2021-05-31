@@ -22,8 +22,6 @@ function App() {
 const Container = styled.div`
 	font-family: Poppins;
 	display: flex;
-	align-items: center;
-	justify-content: center;
 	flex-direction: column;
 `;
 export default App;

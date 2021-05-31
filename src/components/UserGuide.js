@@ -3,7 +3,7 @@ import { Fade } from 'react-awesome-reveal';
 
 function UserGuide() {
 	return (
-		<Fade triggerOnce={true} direction="up" delay={1000}>
+		<Fade triggerOnce={true} direction="left" delay={1000}>
 			<UserGuideSC>
 				<h2>User Guide</h2>
 				<p>
@@ -18,6 +18,7 @@ function UserGuide() {
 
 const UserGuideSC = styled.div`
 	text-align: justify;
+
 	h2 {
 		margin: 10px 20px;
 		color: #ff5252;

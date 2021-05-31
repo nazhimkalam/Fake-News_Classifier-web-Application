@@ -3,7 +3,7 @@ import { Fade } from 'react-awesome-reveal';
 
 function Header() {
 	return (
-		<Fade triggerOnce={true} direction="up">
+		<Fade triggerOnce={true} direction="down">
 			<HeaderSC>
 				<h1>FNC</h1>
 			</HeaderSC>
@@ -16,7 +16,6 @@ const HeaderSC = styled.div`
 	}
 	margin: 00px 20px 20px 20px;
 	padding: 20px;
-	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;

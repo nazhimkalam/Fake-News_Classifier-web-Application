@@ -3,7 +3,7 @@ import { Fade } from 'react-awesome-reveal';
 
 function Footer() {
 	return (
-		<Fade triggerOnce={true} direction="up" delay={3000}>
+		<Fade triggerOnce={true} direction="up">
 			<FooterSC>
 				<p>@nazhimkalam</p>
 			</FooterSC>
@@ -11,6 +11,7 @@ function Footer() {
 	);
 }
 const FooterSC = styled.div`
+
 	p {
 		font-size: smaller;
 		color: #ff5252;

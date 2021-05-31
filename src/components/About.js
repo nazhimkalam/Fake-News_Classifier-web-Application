@@ -3,7 +3,7 @@ import { Fade } from 'react-awesome-reveal';
 
 function About() {
 	return (
-		<Fade triggerOnce={true} direction="up" delay={500}>
+		<Fade triggerOnce={true} direction="right" delay={500}>
 			<AboutSC>
 				<h2>About</h2>
 				<p>
@@ -30,6 +30,7 @@ function About() {
 }
 const AboutSC = styled.div`
 	text-align: justify;
+
 	h2 {
 		margin: 10px 20px;
 		color: #ff5252;
