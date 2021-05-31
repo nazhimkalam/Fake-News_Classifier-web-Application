@@ -1,17 +1,54 @@
 import styled from 'styled-components';
 import { Fade } from 'react-awesome-reveal';
+import { useState } from 'react';
 
 function Detector() {
+	const [input, setInput] = useState('');
+	const [loading, setLoading] = useState(false);
+	const [result, setResult] = useState(null);
+
+	const onHandleDetect = async (e) => {
+		e.preventDefault();
+		setLoading(true);
+
+		const requestOptions = {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ message: input }),
+		};
+
+		await fetch('https://fake-new-classifier-nlp.herokuapp.com/predict', requestOptions)
+			.then((response) => response.json())
+			.then((result) => setResult(result.Prediction));
+
+		setLoading(false);
+	};
+
 	return (
 		<Fade triggerOnce={true} direction="left">
 			<DetectorSC>
 				<h2>Detector</h2>
-				<form>
-					<textarea placeholder="Enter New Heading . . ." cols="30" rows="5" />
-					<button>DETECT</button>
-					<p className="reliable">RELIABLE</p>
-					<p className="unreliable reliable">UNRELIABLE</p>
-					<p className="loading">PROCESSING THE RESULT . . .</p>
+				<form onSubmit={onHandleDetect}>
+					<textarea
+						placeholder="Enter New Heading . . ."
+						cols="30"
+						value={input}
+						rows="5"
+						onChange={(e) => {
+							setResult(null);
+							e.target.value = '' ? setInput('') : setInput(e.target.value);
+						}}
+					/>
+					<button onClick={onHandleDetect}>DETECT</button>
+					{input !== '' ? (
+						loading ? (
+							<p className="loading">PROCESSING THE RESULT . . .</p>
+						) : (
+							<p className={`${result?.toLowerCase()} reliable`}>{result?.toUpperCase()}</p>
+						)
+					) : (
+						<p className="loading">PLEASE ENTER A NEWS HEADLINE TITLE</p>
+					)}
 				</form>
 			</DetectorSC>
 		</Fade>
@@ -28,11 +65,12 @@ const DetectorSC = styled.div`
 		border: 2px #ff6666 solid;
 		cursor: pointer;
 	}
-    .loading{
-        font-weight: bolder;
-    }
+	.loading {
+		font-weight: bolder;
+	}
 	.reliable {
 		color: #06aa22;
+		margin: 5px;
 		font-weight: bolder;
 		font-size: 25px;
 	}
