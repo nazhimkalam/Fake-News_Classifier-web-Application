@@ -1,10 +1,13 @@
 import styled from 'styled-components';
+import { Fade } from 'react-awesome-reveal';
 
 function Footer() {
 	return (
-		<FooterSC>
-			<p>@nazhimkalam</p>
-		</FooterSC>
+		<Fade triggerOnce={true} direction="up" delay={3000}>
+			<FooterSC>
+				<p>@nazhimkalam</p>
+			</FooterSC>
+		</Fade>
 	);
 }
 const FooterSC = styled.div`
