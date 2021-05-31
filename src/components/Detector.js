@@ -3,13 +3,15 @@ import { Fade } from 'react-awesome-reveal';
 
 function Detector() {
 	return (
-		<Fade triggerOnce={true} direction="left" >
+		<Fade triggerOnce={true} direction="left">
 			<DetectorSC>
 				<h2>Detector</h2>
 				<form>
-					<textarea cols="30" rows="5" />
+					<textarea placeholder="Enter New Heading . . ." cols="30" rows="5" />
 					<button>DETECT</button>
-					<p>RELIABLE</p>
+					<p className="reliable">RELIABLE</p>
+					<p className="unreliable reliable">UNRELIABLE</p>
+					<p className="loading">PROCESSING THE RESULT . . .</p>
 				</form>
 			</DetectorSC>
 		</Fade>
@@ -17,6 +19,35 @@ function Detector() {
 }
 const DetectorSC = styled.div`
 	text-align: justify;
+	button {
+		font-family: Poppins;
+		background-color: #ff6666;
+		outline: none;
+		font-weight: bolder;
+		color: #f7f7f7;
+		border: 2px #ff6666 solid;
+		cursor: pointer;
+	}
+    .loading{
+        font-weight: bolder;
+    }
+	.reliable {
+		color: #06aa22;
+		font-weight: bolder;
+		font-size: 25px;
+	}
+	.unreliable {
+		color: #d80202;
+	}
+	textarea {
+		font-family: Poppins;
+		padding: 8px;
+		outline: none;
+		border: 2px #ff8989 solid;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+		resize: none;
+	}
 	p {
 		display: flex;
 		align-items: center;
@@ -30,6 +61,7 @@ const DetectorSC = styled.div`
 	form {
 		margin: 20px;
 		display: flex;
+
 		flex-direction: column;
 		justify-content: center;
 	}
