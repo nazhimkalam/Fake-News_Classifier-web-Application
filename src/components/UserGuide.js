@@ -20,7 +20,7 @@ const UserGuideSC = styled.div`
 	text-align: justify;
 
 	h2 {
-		margin: 10px 20px;
+		margin: 20px;
 		color: #ff5252;
 	}
 	p {

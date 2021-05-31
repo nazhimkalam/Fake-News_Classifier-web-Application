@@ -4,17 +4,16 @@ import { Fade } from 'react-awesome-reveal';
 function Footer() {
 	return (
 		<Fade triggerOnce={true} direction="up">
-			<FooterSC>
-				<p>@nazhimkalam</p>
-			</FooterSC>
+			<FooterSC>@nazhimkalam</FooterSC>
 		</Fade>
 	);
 }
 const FooterSC = styled.div`
-
-	p {
-		font-size: smaller;
-		color: #ff5252;
-	}
+	margin: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: smaller;
+	color: #ff5252;
 `;
 export default Footer;

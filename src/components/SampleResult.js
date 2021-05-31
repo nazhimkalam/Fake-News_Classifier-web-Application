@@ -3,7 +3,7 @@ import { Fade } from 'react-awesome-reveal';
 
 function SampleResult() {
 	return (
-		<Fade triggerOnce={true} direction="up" delay={1500}>
+		<Fade triggerOnce={true} direction="up" delay={1000}>
 			<SampleResultSC>
 				<h2>Sample Inputs</h2>
 
@@ -34,7 +34,7 @@ function SampleResult() {
 const SampleResultSC = styled.div`
 	text-align: justify;
 	h2 {
-		margin: 10px 20px;
+		margin: 20px;
 		color: #ff5252;
 	}
 	p {
