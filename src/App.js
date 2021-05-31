@@ -4,6 +4,7 @@ import Header from './components/Header';
 import About from './components/About';
 import UserGuide from './components/UserGuide';
 import Detector from './components/Detector';
+import SampleResult from './components/SampleResult';
 
 function App() {
 	return (
@@ -11,6 +12,7 @@ function App() {
 			<Header />
 			<About />
 			<UserGuide />
+			<SampleResult />
 			<Detector />
 			<Footer />
 		</Container>

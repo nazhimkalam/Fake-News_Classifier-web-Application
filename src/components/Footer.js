@@ -10,7 +10,7 @@ function Footer() {
 const FooterSC = styled.div`
 	p {
 		font-size: smaller;
-		color: #5465ff;
+		color: #ff5252;
 	}
 `;
 export default Footer;
